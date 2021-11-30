@@ -1,0 +1,41 @@
+﻿<Window x:Class="Ado.Net_Home_Work_Customers_Orders_Products.OrderDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ado.Net_Home_Work_Customers_Orders_Products"
+        mc:Ignorable="d"
+        Title="OrderDetailWindow" Height="350" Width="350">
+    <StackPanel HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Company</TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="CompTxt">Text</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Product</TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="ProdTxt">Text</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Quanity</TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="QuanityTxt">Text</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Unit Price </TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="PriceTxt">Text</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Discount</TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="DisTxt">Text</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock FontSize="20">Total Price</TextBlock>
+            <TextBlock FontSize="20">--></TextBlock>
+            <TextBlock FontSize="20" Name="TotalPriceTxt">Text</TextBlock>
+        </StackPanel>
+    </StackPanel>
+</Window>

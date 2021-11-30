@@ -13,6 +13,6 @@
         </Grid.RowDefinitions>
         <ComboBox HorizontalAlignment="Left" Width="300" Margin="75 5" Name="CBOrderId" SelectionChanged="CBOrderId_SelectionChanged"></ComboBox>
         <Label HorizontalAlignment="Left" VerticalAlignment="Center" >Order ID --></Label>
-        <DataGrid Grid.Row="1" IsReadOnly="True" Name="DG"></DataGrid>
+        <DataGrid Grid.Row="1" IsReadOnly="True" Name="DG" PreviewMouseDoubleClick="DG_PreviewMouseDoubleClick" ></DataGrid>
     </Grid>
 </Window>

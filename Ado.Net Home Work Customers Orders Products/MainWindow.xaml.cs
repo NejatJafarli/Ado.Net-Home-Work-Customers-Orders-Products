@@ -67,5 +67,36 @@ WHERE Orders.OrderID = @Id";
 
             }
         }
+
+        private void DG_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DG.SelectedItem == null) return;
+            DataRowView Data = (DataRowView)DG.SelectedItem;
+
+            string Query = @"
+SELECT Customers.CompanyName,
+Products.ProductName,[Order Details].Quantity,
+[Order Details].UnitPrice, [Order Details].Discount,
+(Quantity * [Order Details].UnitPrice) AS 'Total Price'
+FROM Orders 
+JOIN [Order Details] ON Orders.OrderID = [Order Details].OrderID
+JOIN Products ON Products.ProductIDD = [Order Details].ProductID 
+JOIN Customers ON Customers.CustomerID = Orders.CustomerID 
+WHERE Products.ProductName = @Name";
+
+            using (SqlConnection Conn = new SqlConnection(Connection))
+            {
+                Conn.Open ();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(Query,Conn);
+                adapter.SelectCommand.Parameters.Add("@Name",SqlDbType.NVarChar).Value=Data.Row[1].ToString();
+                DataTable DataTable = new DataTable();
+
+                adapter.Fill (DataTable);
+
+                OrderDetailWindow orderDetailWindow = new OrderDetailWindow(DataTable);
+                orderDetailWindow.ShowDialog();
+            }
+        }
     }
 }
